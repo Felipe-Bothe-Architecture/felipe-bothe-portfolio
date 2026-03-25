@@ -1,0 +1,101 @@
+.contact {
+  padding: 10rem 0;
+  background-color: var(--background);
+  border-top: 1px solid #EAE7DF;
+}
+
+.label {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--secondary-text);
+}
+
+.title {
+  font-family: var(--font-noto-serif), serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: var(--foreground);
+  line-height: 1.1;
+  max-width: 500px;
+}
+
+.text {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--secondary-text);
+  max-width: 500px;
+}
+
+.infoLabel {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--secondary-text);
+  opacity: 0.6;
+}
+
+.infoValue {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 1rem;
+  color: var(--foreground);
+}
+
+.socialLink {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--secondary-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.socialLink:hover {
+  color: var(--foreground);
+}
+
+.button {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  height: 3.5rem;
+  padding: 0 2.5rem;
+  border-radius: 0;
+  width: fit-content;
+}
+
+.button:hover {
+  background-color: var(--secondary-text);
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid #EAE7DF;
+}
+
+.image {
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 6rem 0;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}

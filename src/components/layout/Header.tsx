@@ -42,8 +42,13 @@ export function Header() {
           {desktopItems.slice(0, 2)}
         </Group>
 
-        <Link href="/" className={classes.logo}>
-          FELIPE BOTHE
+        <Link href="/" className={classes.logoContainer}>
+          <div className={classes.logo}>FELIPE BOTHE</div>
+          <div className={classes.subtitleContainer}>
+            <span className={classes.line}></span>
+            <span className={classes.subtitle}>Architect</span>
+            <span className={classes.line}></span>
+          </div>
         </Link>
 
         <Group visibleFrom="sm" className={`${classes.links} ${classes.linksRight}`}>

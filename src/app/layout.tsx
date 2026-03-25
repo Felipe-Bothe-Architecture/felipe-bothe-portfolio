@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${notoSerif.variable} ${manrope.variable}`} {...mantineHtmlProps}>
       <head>
-        <ColorSchemeScript />
+        {/* <ColorSchemeScript /> */}
       </head>
       <body>
         <MantineProvider>
