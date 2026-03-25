@@ -1,0 +1,32 @@
+.shell {
+  background-color: var(--background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerContainer {
+  border: none;
+  background: transparent;
+}
+
+.main {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: var(--mantine-spacing-xl);
+  max-width: var(--mantine-breakpoint-xl);
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: var(--mantine-spacing-md);
+  }
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Serif, Manrope } from "next/font/google";
 import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
 import { MantineProvider } from "@/providers/MantineProvider";
+import { SiteLayout } from "@/components/layout/SiteLayout";
 import "@mantine/core/styles.css";
 import "./globals.css";
 
@@ -17,7 +18,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Atelier Minimal",
+  title: "Felipe Bothe - Bespoke Residential Architecture",
   description: "High-end professional architectural monolith aesthetic",
 };
 
@@ -32,7 +33,9 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider>
+          <SiteLayout>{children}</SiteLayout>
+        </MantineProvider>
       </body>
     </html>
   );
