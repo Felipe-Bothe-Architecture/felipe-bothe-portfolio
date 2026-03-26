@@ -1,4 +1,4 @@
-import { Card, Image, Text, Title, Button, Box } from '@mantine/core';
+import { Card, Image, Text, Title, Button, AspectRatio, Stack } from '@mantine/core';
 import Link from 'next/link';
 import classes from '@/styles/components/common/ProjectCard.module.css';
 
@@ -11,22 +11,22 @@ interface ProjectCardProps {
 
 export function ProjectCard({ id, title, description, imageUrl }: Readonly<ProjectCardProps>) {
   return (
-    <Card className={classes.card} padding="0">
+    <Card className={classes.card} padding="0" bg="transparent" withBorder>
       <Card.Section className={classes.imageSection}>
-        <Box className={classes.imageWrapper}>
+        <AspectRatio ratio={3/2}>
           <Image
             src={imageUrl}
-            alt={title}
+            alt={`Project: ${title}`}
             className={classes.image}
           />
-        </Box>
+        </AspectRatio>
       </Card.Section>
 
-      <Box className={classes.content}>
-        <Title order={3} className={classes.title}>
+      <Stack gap="md" p="xl" flex={1}>
+        <Title order={3} fz="lg" fw={400} c="stone.8" tt="uppercase">
           {title}
         </Title>
-        <Text className={classes.description} lineClamp={2}>
+        <Text fz="sm" lh="1.6" c="stone.7" lineClamp={2} flex={1}>
           {description}
         </Text>
         <Button 
@@ -34,10 +34,16 @@ export function ProjectCard({ id, title, description, imageUrl }: Readonly<Proje
           href={`/projects/${id}`} 
           variant="transparent" 
           className={classes.button}
+          p={0}
+          w="fit-content"
+          h="auto"
+          fz="0.65rem"
+          lts="0.15em"
+          c="stone.8"
         >
           Explore Project
         </Button>
-      </Box>
+      </Stack>
     </Card>
   );
 }

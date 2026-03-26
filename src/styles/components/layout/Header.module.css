@@ -1,7 +1,7 @@
 .header {
   background-color: rgba(251, 249, 244, 0.8);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #EAE7DF;
+  border-bottom: 1px solid var(--mantine-color-stone-2);
   transition: background-color 0.3s ease;
   position: fixed;
   top: 0;
@@ -13,83 +13,28 @@
 
 :global(.dark) .header {
   background-color: rgba(28, 25, 23, 0.8);
-  border-bottom: 1px solid #2F2B27;
+  border-bottom: 1px solid var(--mantine-color-stone-9);
 }
 
-.inner {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 0 var(--mantine-spacing-xl);
-}
-
-.logoContainer {
+.logoSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  gap: 4px;
 }
 
-.logo {
-  font-family: var(--font-noto-serif), serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.4rem;
+.logoText {
   color: var(--foreground);
-}
-
-.subtitleContainer {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  gap: 8px;
-}
-
-.subtitle {
-  font-family: var(--font-manrope), sans-serif;
-  font-size: 0.55rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.3rem;
-  color: var(--secondary-text);
-}
-
-.line {
-  flex: 1;
-  height: 1px;
-  background-color: var(--secondary-text);
-  opacity: 0.3;
-}
-
-.links {
-  display: flex;
-  gap: var(--mantine-spacing-xl);
-  position: absolute;
-}
-
-.linksLeft {
-  left: var(--mantine-spacing-xl);
-}
-
-.linksRight {
-  right: var(--mantine-spacing-xl);
+  white-space: nowrap;
 }
 
 .link {
   font-family: var(--font-manrope), sans-serif;
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   color: var(--secondary-text);
-  text-decoration: none;
   transition: color 0.2s ease;
   position: relative;
   padding: 8px 0;
@@ -114,13 +59,15 @@
   width: 100%;
 }
 
-.burger {
-  position: absolute;
-  right: var(--mantine-spacing-xl);
+.mobileLink {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--secondary-text);
 }
 
-@media (max-width: 768px) {
-  .links {
-    display: none;
-  }
+.burger {
+  position: absolute;
+  right: 0;
 }

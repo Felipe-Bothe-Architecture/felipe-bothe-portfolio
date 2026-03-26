@@ -1,9 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Container, Title, Text, Button, Grid, Stack, Center } from '@mantine/core';
+import { Container, Title, Text, Button, Grid, Stack, Center, Box } from '@mantine/core';
 import { ProjectCard } from '../common/ProjectCard';
-import classes from '@/styles/components/sections/ProjectsDisplay.module.css';
 
 const ALL_PROJECTS = [
   {
@@ -49,11 +48,15 @@ export function ProjectsDisplay() {
   const visibleProjects = showAll ? ALL_PROJECTS : ALL_PROJECTS.slice(0, 3);
 
   return (
-    <section className={classes.projects}>
+    <Box component="section" py="10rem" bg="stone.1" style={{ borderTop: '1px solid var(--mantine-color-stone-2)' }}>
       <Container size="xl">
         <Stack gap="xl" mb="5rem">
-          <Text className={classes.label}>Selected Works</Text>
-          <Title className={classes.title}>The Architectural Monolith Series</Title>
+          <Text fz="xs" fw={700} tt="uppercase" lts="0.2rem" c="stone.6">
+            Selected Works
+          </Text>
+          <Title fz="3.5rem" lh="1.1" fw={400} c="stone.8">
+            The Architectural Monolith Series
+          </Title>
         </Stack>
 
         <Grid gutter={40}>
@@ -68,15 +71,17 @@ export function ProjectsDisplay() {
           <Center mt="5rem">
             <Button 
               variant="outline" 
-              className={classes.viewMore} 
-              onClick={() => setShowAll(true)}
+              color="stone.7"
               size="lg"
+              h="3.5rem"
+              px="2.5rem"
+              onClick={() => setShowAll(true)}
             >
               View More Projects
             </Button>
           </Center>
         )}
       </Container>
-    </section>
+    </Box>
   );
 }

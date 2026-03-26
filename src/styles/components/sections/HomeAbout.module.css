@@ -1,13 +1,6 @@
-.about {
-  padding: 10rem 0;
-  background-color: var(--background);
-}
-
 .imageWrapper {
-  position: relative;
-  aspect-ratio: 4/5;
   overflow: hidden;
-  border: 1px solid #EAE7DF;
+  border: 1px solid var(--mantine-color-stone-2);
 }
 
 .image {
@@ -19,63 +12,7 @@
   transform: scale(1.05);
 }
 
-.content {
-  max-width: 500px;
-}
-
-.label {
-  font-family: var(--font-manrope), sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  color: var(--secondary-text);
-  margin-bottom: 2rem;
-  display: block;
-}
-
-.title {
-  font-family: var(--font-noto-serif), serif;
-  font-size: 3rem;
-  line-height: 1.2;
-  color: var(--foreground);
-  font-weight: 400;
-  margin-bottom: 2.5rem;
-}
-
-.text {
-  font-family: var(--font-manrope), sans-serif;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--secondary-text);
-  margin-bottom: 3rem;
-}
-
-.button {
-  font-family: var(--font-manrope), sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  border: 1px solid var(--secondary-text);
-  color: var(--secondary-text);
-  background-color: transparent;
-  transition: all 0.3s ease;
-  height: 3.5rem;
-  padding: 0 2.5rem;
-  border-radius: 0;
-}
-
-.button:hover {
-  background-color: var(--secondary-text);
-  color: #FFFFFF;
-}
-
 @media (max-width: 768px) {
-  .about {
-    padding: 6rem 0;
-  }
-  
   .title {
     font-size: 2.2rem;
   }

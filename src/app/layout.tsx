@@ -28,9 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${notoSerif.variable} ${manrope.variable}`} {...mantineHtmlProps}>
+    <html 
+      lang="en" 
+      {...mantineHtmlProps}
+      className={`${notoSerif.variable} ${manrope.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        {/* <ColorSchemeScript /> */}
+        <ColorSchemeScript defaultColorScheme="auto" />
       </head>
       <body>
         <MantineProvider>

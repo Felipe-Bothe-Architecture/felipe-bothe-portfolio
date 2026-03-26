@@ -1,19 +1,20 @@
-import { Container, Text } from '@mantine/core';
-import classes from '@/styles/components/layout/Footer.module.css';
+import { Container, Text, Group, Box } from '@mantine/core';
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={classes.footer}>
-      <Container size="xl" className={classes.inner}>
-        <Text className={classes.text}>
-          © {year} FELIPE BOTHE. ALL RIGHTS RESERVED.
-        </Text>
-        <Text className={classes.text}>
-          WEBSITE BY SANTIAGO ORTIZ BETANCOURT
-        </Text>
+    <Box component="footer" bg="stone.0" py="xl" style={{ borderTop: '1px solid var(--mantine-color-stone-2)' }}>
+      <Container size="xl">
+        <Group justify="space-between" align="center">
+          <Text size="xs" fw={500} lts="0.1em" tt="uppercase">
+            © {year} FELIPE BOTHE. ALL RIGHTS RESERVED.
+          </Text>
+          <Text size="xs" fw={500} lts="0.1em" tt="uppercase">
+            WEBSITE BY SANTIAGO ORTIZ BETANCOURT
+          </Text>
+        </Group>
       </Container>
-    </footer>
+    </Box>
   );
 }
