@@ -8,7 +8,7 @@ export function Footer() {
       <Container size="xl">
         <Group justify="space-between" align="center">
           <Text size="xs" fw={500} lts="0.1em" tt="uppercase">
-            © {year} FELIPE BOTHE. ALL RIGHTS RESERVED.
+            © {year} FELIPE BOTHE ARCHITECTURE. ALL RIGHTS RESERVED.
           </Text>
           <Text size="xs" fw={500} lts="0.1em" tt="uppercase">
             WEBSITE BY SANTIAGO ORTIZ BETANCOURT

@@ -12,12 +12,6 @@ const ALL_PROJECTS = [
     imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop',
   },
   {
-    id: '2',
-    title: 'Monolith Office',
-    description: 'Structural honesty in a corporate environment with exposed concrete.',
-    imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop',
-  },
-  {
     id: '3',
     title: 'Stone Pavilion',
     description: 'An outdoor structure that celebrates natural stone materiality.',
@@ -55,16 +49,16 @@ export function ProjectsDisplay() {
             Selected Works
           </Text>
           <Title fz="3.5rem" lh="1.1" fw={400} c="stone.8">
-            The Architectural Monolith Series
+            Signature Luxury Work
           </Title>
         </Stack>
 
         <Grid gutter={40}>
-          {/* {visibleProjects.map((project) => (
+          {visibleProjects.map((project) => (
             <Grid.Col key={project.id} span={{ base: 12, sm: 6, lg: 4 }}>
               <ProjectCard {...project} />
             </Grid.Col>
-          ))} */}
+          ))}
         </Grid>
 
         {!showAll && (

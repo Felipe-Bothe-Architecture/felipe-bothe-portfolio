@@ -26,15 +26,16 @@ export function HomeAbout() {
             <Stack gap="xl" maw={500}>
               <Box>
                 <Text fz="xs" fw={700} tt="uppercase" lts="0.2rem" c="stone.6" mb="md">
-                  About the Atelier
+                  About
                 </Text>
                 <Title order={2} fz="3rem" lh="1.2" fw={400} c="stone.8">
-                  The craft of silence and structural honesty.
+                  Bespoke Residential Architecture
                 </Title>
               </Box>
               
               <Text fz="md" lh="1.8" c="stone.7">
-                We believe in permanent structures that speak through their material and relationship with light. Every project is an exploration of essential form and monumental scale.
+                Designing refined, contemporary homes customized to our clients&#39; vision
+                and style in South Florida.
               </Text>
               
               <Button 

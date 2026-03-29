@@ -54,7 +54,7 @@ export function Header() {
             <Group gap={8} w="100%" wrap="nowrap" align="center" mt={4}>
               <Box className={classes.line} flex={1} h={1} bg="stone.2" opacity={0.5} />
               <Text fz="0.55rem" fw={500} lts="0.3rem" tt="uppercase" c="stone.7">
-                Architect
+                Architecture
               </Text>
               <Box className={classes.line} flex={1} h={1} bg="stone.2" opacity={0.5} />
             </Group>

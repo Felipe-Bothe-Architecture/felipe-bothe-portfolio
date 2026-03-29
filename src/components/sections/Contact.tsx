@@ -22,7 +22,7 @@ export function Contact() {
               </Box>
               
               <Text fz="lg" lh="1.8" c="stone.7">
-                Whether it&apos;s a monumental structure or a minimal sanctuary, we&apos;re ready to bring your vision to life through structural honesty and architectural craft.
+                Get in touch to begin the conversation about your custom residency.
               </Text>
               
               <Group gap={64} mt="xl">
@@ -32,12 +32,12 @@ export function Contact() {
                 </Stack>
                 <Stack gap="xs">
                   <Text fz="xs" fw={700} tt="uppercase" lts="0.1rem" opacity={0.6}>Email</Text>
-                  <Text fz="md" c="stone.8">hello@felipebothe.com</Text>
+                  <Text fz="md" c="stone.8">example@felipebothe.com</Text>
                 </Stack>
               </Group>
 
               <Group gap="xl" mt="md">
-                {['Instagram', 'LinkedIn', 'Behance'].map((platform) => (
+                {['Instagram', 'LinkedIn'].map((platform) => (
                   <Text 
                     key={platform}
                     component={Link} 
