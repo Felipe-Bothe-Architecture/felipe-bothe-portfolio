@@ -12,12 +12,14 @@ export function HomeAbout() {
         <Grid gutter={80} align="center">
           <Grid.Col span={{ base: 12, md: 6 }}>
             <AspectRatio ratio={4/5} className={classes.imageWrapper}>
-              <Image 
-                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop"
-                alt="Architecture Studio Interior"
-                fill
-                className={classes.image}
-              />
+              <Box pos="relative" h="100%" w="100%">
+                <Image 
+                  src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop"
+                  alt="Architecture Studio Interior"
+                  fill
+                  className={classes.image}
+                />
+              </Box>
             </AspectRatio>
           </Grid.Col>
           <Grid.Col span={{ base: 12, md: 6 }}>

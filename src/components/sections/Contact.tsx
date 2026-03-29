@@ -69,12 +69,14 @@ export function Contact() {
           </Grid.Col>
           <Grid.Col span={{ base: 12, md: 5 }}>
             <AspectRatio ratio={1} className={classes.imageWrapper}>
-              <Image 
-                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
-                alt="Contact Felipe Bothe"
-                fill
-                className={classes.image}
-              />
+              <Box pos="relative" h="100%" w="100%">
+                <Image 
+                  src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+                  alt="Contact Felipe Bothe"
+                  fill
+                  className={classes.image}
+                />
+              </Box>
             </AspectRatio>
           </Grid.Col>
         </Grid>

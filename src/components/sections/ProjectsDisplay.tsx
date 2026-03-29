@@ -60,11 +60,11 @@ export function ProjectsDisplay() {
         </Stack>
 
         <Grid gutter={40}>
-          {visibleProjects.map((project) => (
+          {/* {visibleProjects.map((project) => (
             <Grid.Col key={project.id} span={{ base: 12, sm: 6, lg: 4 }}>
               <ProjectCard {...project} />
             </Grid.Col>
-          ))}
+          ))} */}
         </Grid>
 
         {!showAll && (
