@@ -40,7 +40,7 @@ export default function ContactPage() {
             <Box>
               <Text tt="uppercase" lts="0.2rem" fz="xs" fw={700} c="stone.4" mb="xs">Get in Touch</Text>
               <Title order={1} fz="clamp(2.5rem, 5vw, 4rem)" lh={1.1} c="stone.8">
-                Let's discuss <br /> your vision.
+                Let&apos;s discuss <br /> your vision.
               </Title>
             </Box>
             

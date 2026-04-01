@@ -9,11 +9,13 @@ export default function AboutPage() {
     profession: "Architectural Designer",
     hookTitle: "Designing with Precision",
     hookPhrase: "Creating spaces that transcend time through structural honesty and monumental proportions.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+    image: "https://plus.unsplash.com/premium_photo-1677252438411-9a930d7a5168?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     biography: [
-      "Based in West Palm Beach, Florida, our practice is dedicated to the pursuit of architectural excellence through a philosophy we call 'Atelier Minimal'.",
-      "We believe that the most powerful architectural statements are made through restraint. By focusing on the essential qualities of space, light, and materiality, we create residences that are both monumental and deeply human.",
-      "Every project is a collaboration between the landscape, the material, and the vision of our clients, resulting in custom residences that are as permanent as they are prestigious."
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
     ]
   };
 
@@ -55,8 +57,8 @@ export default function AboutPage() {
             </Title>
 
             <Stack gap="md">
-              {aboutData.biography.map((paragraph) => (
-                <Text key={paragraph} fz="lg" c="stone.7" lh={1.6}>
+              {aboutData.biography.map((paragraph, index) => (
+                <Text key={paragraph + index} fz="lg" c="stone.7" lh={1.6}>
                   {paragraph}
                 </Text>
               ))}

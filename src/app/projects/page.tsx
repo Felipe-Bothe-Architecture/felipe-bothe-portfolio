@@ -4,19 +4,27 @@ import { useState } from 'react';
 import { Container, Title, Text, Box, Group, SegmentedControl, Grid, Stack, Image as MantineImage, UnstyledButton } from '@mantine/core';
 import Link from 'next/link';
 
+interface ProjectCard {
+  name: string,
+  slug: string,
+  location: string,
+  image: string,
+  year: string
+}
+
 const projects = [
   {
     name: "The Glass House",
     slug: "the-glass-house",
     location: "West Palm Beach, FL",
-    image: "https://images.unsplash.com/photo-1600585154340-be6191fe7e0b?q=80&w=2070&auto=format&fit=crop",
+    image: "https://plus.unsplash.com/premium_photo-1664301045332-b037631b8a56?q=80&w=1572&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     year: "2023"
   },
   {
     name: "Brutalist Sanctuary",
     slug: "brutalist-sanctuary",
     location: "Miami, FL",
-    image: "https://images.unsplash.com/photo-1600607687940-c52af0a43538?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1642327949281-e4b09180b97f?q=80&w=1563&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     year: "2022"
   },
   {
@@ -92,7 +100,7 @@ export default function ProjectsPage() {
   );
 }
 
-function ProjectCard({ project }: Readonly<{ project: any }>) {
+function ProjectCard({ project }: Readonly<{ project: ProjectCard }>) {
   return (
     <UnstyledButton component={Link} href={`/projects/${project.slug}`} style={{ width: '100%' }}>
       <Box className="project-card-group">
@@ -124,7 +132,7 @@ function ProjectCard({ project }: Readonly<{ project: any }>) {
   );
 }
 
-function ProjectListItem({ project, index }: { project: any, index: number }) {
+function ProjectListItem({ project, index }: Readonly<{ project: ProjectCard, index: number }>) {
   return (
     <UnstyledButton 
       component={Link} 

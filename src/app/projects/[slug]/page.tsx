@@ -1,9 +1,24 @@
-import { Container, Title, Text, Box, Grid, Stack, Image as MantineImage, Group, Divider, SimpleGrid } from '@mantine/core';
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { Container, Title, Text, Box, Grid, Stack, Image as MantineImage, Group, Divider, SimpleGrid, Loader, Center } from '@mantine/core';
 import { notFound } from 'next/navigation';
+
+interface Project {
+  name: string;
+  location: string;
+  year: string;
+  description: string;
+  mainImage: string;
+  details: { label: string; value: string; }[];
+  internalPictures?: string[];
+  blueprints?: string[];
+  sketches?: string[];
+}
 
 // Mock data fetcher
 async function getProject(slug: string) {
-  const projects: Record<string, any> = {
+  const projects: Record<string, Project> = {
     "the-glass-house": {
       name: "The Glass House",
       location: "West Palm Beach, FL",
@@ -46,12 +61,36 @@ async function getProject(slug: string) {
   return projects[slug] || null;
 }
 
-export default async function ProjectSinglePage({ params }: Readonly<{ params: Promise<{ slug: string }> }>) {
-  const { slug } = await params;
-  const project = await getProject(slug);
+export default function ProjectSinglePage({ params }: Readonly<{ params: Promise<{ slug: string }> }>) {
+  const { slug } = React.use(params);
+  const [project, setProject] = useState<Project | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchProject() {
+      try {
+        const data = await getProject(slug);
+        setProject(data);
+      } catch (error) {
+        console.error("Error fetching project:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchProject();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <Center h="100vh">
+        <Loader color="stone.5" />
+      </Center>
+    );
+  }
 
   if (!project) {
     notFound();
+    return null;
   }
 
   return (
@@ -87,7 +126,7 @@ export default async function ProjectSinglePage({ params }: Readonly<{ params: P
         <Grid gutter={80}>
           <Grid.Col span={{ base: 12, md: 8 }}>
             <Stack gap="xl">
-              <Title order={2} fz="3xl" c="stone.8">Architecture of Silence</Title>
+              <Title order={2} fz="3xl" c="stone.8"> Architecture of Silence</Title>
               <Text fz="xl" lh={1.8} c="stone.7">
                 {project.description}
               </Text>
@@ -97,8 +136,8 @@ export default async function ProjectSinglePage({ params }: Readonly<{ params: P
                 <Stack gap="lg" mt="xl">
                   <Text tt="uppercase" lts="0.1rem" fz="xs" fw={700} c="stone.4">Internal Spaces</Text>
                   <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
-                    {project.internalPictures.map((pic: string, i: number) => (
-                      <MantineImage key={i} src={pic} radius={0} h={400} fit="cover" />
+                    {project.internalPictures.map((pic, i) => (
+                      <MantineImage key={pic+i} src={pic} radius={0} h={400} fit="cover" />
                     ))}
                   </SimpleGrid>
                 </Stack>
@@ -108,8 +147,8 @@ export default async function ProjectSinglePage({ params }: Readonly<{ params: P
               {project.blueprints && project.blueprints.length > 0 && (
                 <Stack gap="lg" mt="xl">
                   <Text tt="uppercase" lts="0.1rem" fz="xs" fw={700} c="stone.4">Technical Schematics</Text>
-                  {project.blueprints.map((blueprint: string, i: number) => (
-                    <Box key={i} p="xl" bg="stone.1" style={{ border: '1px solid var(--mantine-color-stone-2)' }}>
+                  {project.blueprints.map((blueprint, i) => (
+                    <Box key={blueprint+i} p="xl" bg="stone.1" style={{ border: '1px solid var(--mantine-color-stone-2)' }}>
                       <MantineImage src={blueprint} radius={0} style={{ filter: 'grayscale(100%) contrast(120%)' }} />
                     </Box>
                   ))}
@@ -121,8 +160,8 @@ export default async function ProjectSinglePage({ params }: Readonly<{ params: P
                 <Stack gap="lg" mt="xl">
                   <Text tt="uppercase" lts="0.1rem" fz="xs" fw={700} c="stone.4">Early Concepts</Text>
                   <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
-                    {project.sketches.map((sketch: string, i: number) => (
-                      <MantineImage key={i} src={sketch} radius={0} h={300} fit="contain" bg="white" p="md" />
+                    {project.sketches.map((sketch, i) => (
+                      <MantineImage key={sketch+i} src={sketch} radius={0} h={300} fit="contain" bg="white" p="md" />
                     ))}
                   </SimpleGrid>
                 </Stack>
@@ -141,8 +180,8 @@ export default async function ProjectSinglePage({ params }: Readonly<{ params: P
                       <Text c="stone.5" fz="sm">Year</Text>
                       <Text c="stone.8" fw={600}>{project.year}</Text>
                     </Group>
-                    {project.details.map((detail: any, i: number) => (
-                      <Group key={i} justify="space-between">
+                    {project.details.map((detail, i) => (
+                      <Group key={detail.label+i} justify="space-between">
                         <Text c="stone.5" fz="sm">{detail.label}</Text>
                         <Text c="stone.8" fw={600}>{detail.value}</Text>
                       </Group>
