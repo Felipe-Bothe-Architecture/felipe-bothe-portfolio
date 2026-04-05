@@ -9,6 +9,30 @@ export const hero = defineType({
     type: 'document',
     fields: [
         defineField({
+            name: 'title',
+            title: 'Main Title',
+            type: 'string',
+            description: 'The primary headline (e.g., Luxury Waterfront Design)',
+            placeholder: 'Luxury Waterfront Design',
+            validation: (rule) => rule.required()
+        }),
+        defineField({
+            name: 'subtitle',
+            title: 'Subtitle',
+            type: 'string',
+            description: 'The secondary tagline (e.g., Contemporary Custom Residences)',
+            placeholder: 'Contemporary Custom Residences',
+            validation: (rule) => rule.required()
+        }),
+        defineField({
+            name: 'button_label',
+            title: 'Button Label',
+            type: 'string',
+            description: 'Text for the call to action button.',
+            placeholder: 'View Projects',
+            validation: (rule) => rule.required()
+        }),
+        defineField({
             name: 'bg_image',
             title: 'Background Image',
             type: 'image',
@@ -25,14 +49,6 @@ export const hero = defineType({
                     validation: (rule) => rule.required()
                 })
             ]
-        }),
-        defineField({
-            name: 'slogan',
-            title: 'Slogan',
-            type: 'string',
-            description: 'The main punchline or tagline for the hero section.',
-            placeholder: 'Crafting digital experiences that matter.',
-            validation: (rule) => rule.required().max(100)
         })
     ]
 });

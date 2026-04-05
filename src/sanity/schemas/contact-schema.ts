@@ -7,10 +7,58 @@ export const contact = defineType({
     description: 'Provide your contact details and social media links for visitors to reach out.',
     type: 'document',
     groups: [
+        { name: 'content', title: 'Content' },
         { name: 'direct', title: 'Direct Contact' },
         { name: 'socials', title: 'Social Networks' }
     ],
     fields: [
+        defineField({
+            name: 'title',
+            title: 'Section Title',
+            type: 'string',
+            group: 'content',
+            description: 'Main title (e.g., Let\'s Discuss Your Project)',
+            placeholder: 'Let\'s Discuss Your Project',
+            validation: (rule) => rule.required()
+        }),
+        defineField({
+            name: 'description',
+            title: 'Description',
+            type: 'text',
+            group: 'content',
+            description: 'Brief text encouraging visitors to reach out.',
+            placeholder: 'Get in touch to begin the conversation about your custom residency.',
+            rows: 3,
+            validation: (rule) => rule.required()
+        }),
+        defineField({
+            name: 'button_label',
+            title: 'Button Label',
+            type: 'string',
+            group: 'content',
+            description: 'Text for the call to action button.',
+            placeholder: 'Get In Touch',
+            validation: (rule) => rule.required()
+        }),
+        defineField({
+            name: 'image',
+            title: 'Contact Image',
+            type: 'image',
+            group: 'content',
+            description: 'Image displayed next to the contact details.',
+            options: { hotspot: true },
+            validation: (rule) => rule.required().assetRequired(),
+            fields: [
+                defineField({
+                    name: 'alt',
+                    title: 'Alternative Text',
+                    type: 'string',
+                    description: 'Important for accessibility.',
+                    placeholder: 'Contact Felipe Bothe',
+                    validation: (rule) => rule.required()
+                })
+            ]
+        }),
         defineField({
             name: 'email',
             title: 'Email Address',
@@ -28,7 +76,7 @@ export const contact = defineType({
             group: 'direct',
             icon: MobileDeviceIcon,
             description: 'Optional phone number for direct contact (e.g., WhatsApp).',
-            placeholder: '+1 234 567 890',
+            placeholder: '+1 (555) 000-0000',
         }),
         defineField({
             name: 'instagram',

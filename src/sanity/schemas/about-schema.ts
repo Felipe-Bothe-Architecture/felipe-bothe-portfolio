@@ -8,49 +8,63 @@ export const about = defineType({
     description: 'Tell your story and introduce yourself to visitors.',
     type: 'document',
     groups: [
-        { name: 'personal', title: 'Personal Information' },
-        { name: 'biography', title: 'Biography' }
+        { name: 'homepage', title: 'Home Page Preview' },
+        { name: 'biography', title: 'Full Biography' }
     ],
     fields: [ 
         defineField({
             name: 'display_name',
             title: 'Display Name',
             type: 'string',
-            group: 'personal',
             description: 'The name that will be displayed in the about section.',
             placeholder: 'Felipe Bothe',
             validation: (rule) => rule.required()
         }),
         defineField({
-            name: 'profession_display',
+            name: 'profession',
             title: 'Profession',
             type: 'string',
-            group: 'personal',
-            description: 'Your professional title.',
-            placeholder: 'Software Engineer'
-        }),
-        defineField({
-            name: 'hook_title',
-            title: 'Hook Title',
-            type: 'string',
-            group: 'personal',
-            description: 'A brief, attention-grabbing title.',
-            placeholder: 'Turning ideas into reality.'
+            description: 'Your professional title (e.g. Software Engineer, Architecture).',
+            placeholder: 'Architecture',
+            validation: (rule) => rule.required()
         }),
         defineField({
             name: 'hook_phrase',
-            title: 'Hook Phrase',
+            title: 'Hook Phrase / Quote',
             type: 'string',
-            group: 'personal',
-            description: 'A catchy phrase for your personal introduction.',
-            placeholder: 'Building better products with code.'
+            description: 'A catchy phrase or personal quote.',
+            placeholder: 'Building better products with code.',
+            validation: (rule) => rule.required()
         }),
         defineField({
-            name: 'portfolio_picture',
-            title: 'Portfolio Picture',
+            name: 'home_title',
+            title: 'Home Section Title',
+            type: 'string',
+            group: 'homepage',
+            description: 'The title shown on the Home section (e.g., Bespoke Residential Architecture)',
+            placeholder: 'Bespoke Residential Architecture'
+        }),
+        defineField({
+            name: 'home_description',
+            title: 'Home Section Description',
+            type: 'text',
+            group: 'homepage',
+            description: 'The brief description shown on the Home section.',
+            rows: 3
+        }),
+        defineField({
+            name: 'home_button_label',
+            title: 'Home Button Label',
+            type: 'string',
+            group: 'homepage',
+            description: 'Label for the button on the Home section.',
+            placeholder: 'Learn More'
+        }),
+        defineField({
+            name: 'image',
+            title: 'Main Photo',
             type: 'image',
-            group: 'personal',
-            description: 'Your profile or portfolio photo.',
+            description: 'The primary photo for about sections.',
             options: { hotspot: true },
             validation: (rule) => rule.required().assetRequired(),
             fields: [
@@ -59,31 +73,19 @@ export const about = defineType({
                     title: 'Alternative Text',
                     type: 'string',
                     description: 'Important for accessibility.',
-                    placeholder: 'Felipe Bothe portrait'
-                }),
-                defineField({
-                    name: 'caption',
-                    title: 'Caption',
-                    type: 'string',
-                    description: 'Optional image caption.'
+                    placeholder: 'Felipe Bothe portrait',
+                    validation: (rule) => rule.required()
                 })
             ]
         }),
         defineField({
-            name: 'short_introduction',
-            title: 'Short Introduction',
-            type: 'array',
-            group: 'biography',
-            description: 'A concise introduction for quick reading.',
-            of: [defineArrayMember({ type: 'block' })]
-        }),
-        defineField({
-            name: 'full_description',
+            name: 'full_biography',
             title: 'Full Biography',
             type: 'array',
             group: 'biography',
-            description: 'The complete story of your professional journey.',
-            of: [defineArrayMember({ type: 'block' })]
+            description: 'The complete story for the About page.',
+            of: [defineArrayMember({ type: 'block' })],
+            validation: (rule) => rule.required()
         })
     ]
 });
